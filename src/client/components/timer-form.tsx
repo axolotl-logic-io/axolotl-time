@@ -30,7 +30,6 @@ const TIME_PRESETS = [
 const DEFAULT_FORM = {
   workLength: TIME_PRESETS[5],
   breakLength: TIME_PRESETS[0],
-  sync: true,
 };
 
 type FormValues = typeof DEFAULT_FORM;
@@ -42,16 +41,12 @@ export function TimerForm() {
     workLength: number;
   } | null = useTimer();
 
-  const { register, watch } = useForm<FormValues>({
+  const { register } = useForm<FormValues>({
     defaultValues: {
       breakLength: timer?.breakLength ?? DEFAULT_FORM.breakLength,
       workLength: timer?.workLength ?? DEFAULT_FORM.workLength,
-      sync: true,
     },
   });
-
-  const sync = watch("sync");
-  const startTime = sync ? 0 : Date.now();
 
   return (
     <form
@@ -87,25 +82,28 @@ export function TimerForm() {
             ))}
           </select>
         </label>
-        <label className="flex flex-wrap gap-4">
-          <span className="label">Sync with universe?</span>
-          <input
-            className="checkbox"
-            type="checkbox"
-            {...register("sync", { required: true })}
-          />
-        </label>
-        <input
-          readOnly
-          className="aria-hidden hidden"
-          id="startTime"
-          name="startTime"
-          value={startTime}
-        />
       </div>
-      <div>
-        <Button data-testid="timer-start" type="submit">
+      <div className="flex flex-wrap gap-2">
+        <Button
+          data-testid="timer-start"
+          type="submit"
+          name="startTime"
+          value={0}
+          onClick={(event) => {
+            // Start a private timer from the moment of the click
+            event.currentTarget.value = String(Date.now());
+          }}
+        >
           Start
+        </Button>
+        <Button
+          data-testid="timer-global"
+          type="submit"
+          variant="secondary"
+          name="startTime"
+          value={0}
+        >
+          SCP-2317
         </Button>
       </div>
     </form>
