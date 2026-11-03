@@ -4,6 +4,11 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [tsconfigPaths(), react()],
+  // Next.js inlines these at build time; next/image reads them in the browser.
+  define: {
+    "process.env.__NEXT_IMAGE_OPTS": "undefined",
+    "process.env.NEXT_DEPLOYMENT_ID": "undefined",
+  },
   test: {
     dir: "./tests/vitest",
     browser: {
