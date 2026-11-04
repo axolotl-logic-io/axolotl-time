@@ -12,7 +12,7 @@ export async function ping(
   startTime: number,
 ): Promise<{ buddiesCount: number }> {
   const sessionCutoff = new Date(Date.now() - 1000 * 60 * 60);
-  const { data: id, error } = z.string().uuid().safeParse(unsafeId);
+  const { data: id, error } = z.uuid().safeParse(unsafeId);
   if (error) {
     throw Error("Unexpected usage of API: " + error.message);
   }
