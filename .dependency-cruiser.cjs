@@ -233,6 +233,11 @@ module.exports = {
      */
     detectJSDocImports: true,
 
+    /* TypeScript 7 has no JS API that dependency-cruiser can use yet, so parse
+       with SWC instead. Without this it silently checks 0 modules.
+     */
+    parser: "swc",
+
     /* prefix for links in html and svg output (e.g. 'https://github.com/you/yourrepo/blob/main/'
        to open it on your online repo or `vscode://file/${process.cwd()}/` to 
        open it in visual studio code),
