@@ -369,8 +369,8 @@
 <!-- src/client/components/ui/link.tsx&#45;&gt;src/client/db.ts -->
 <g id="edge18" class="edge">
 <title>src/client/components/ui/link.tsx&#45;&gt;src/client/db.ts</title>
-<path fill="none" stroke="#000000" stroke-opacity="0.200000" d="M389.73,-362.19C414.02,-363.53 451.09,-366.18 483,-371 488.87,-371.89 495.07,-373.06 501.04,-374.31"/>
-<polygon fill="none" stroke="#000000" stroke-opacity="0.200000" points="500.61,-376.36 506.91,-375.57 501.49,-372.26 500.61,-376.36"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M389.73,-362.19C414.02,-363.53 451.09,-366.18 483,-371 488.87,-371.89 495.07,-373.06 501.04,-374.31"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="500.61,-376.36 506.91,-375.57 501.49,-372.26 500.61,-376.36"/>
 </g>
 <!-- src/client/nav.ts -->
 <g id="node18" class="node">
@@ -414,8 +414,8 @@
 <!-- src/client/nav.ts&#45;&gt;src/client/db.ts -->
 <g id="edge26" class="edge">
 <title>src/client/nav.ts&#45;&gt;src/client/db.ts</title>
-<path fill="none" stroke="#000000" stroke-opacity="0.200000" d="M473.12,-348.12C484.3,-354.45 499.32,-362.95 511.52,-369.85"/>
-<polygon fill="none" stroke="#000000" stroke-opacity="0.200000" points="510.65,-371.77 516.91,-372.89 512.72,-368.11 510.65,-371.77"/>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M473.12,-348.12C484.3,-354.45 499.32,-362.95 511.52,-369.85"/>
+<polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="510.65,-371.77 516.91,-372.89 512.72,-368.11 510.65,-371.77"/>
 </g>
 <!-- src/server/db/schema.ts -->
 <g id="node21" class="node">
