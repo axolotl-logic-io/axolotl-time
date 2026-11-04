@@ -1,5 +1,6 @@
 import { defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react";
+import { playwright } from "@vitest/browser-playwright";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
@@ -9,10 +10,15 @@ export default defineConfig({
     "process.env.__NEXT_IMAGE_OPTS": "undefined",
     "process.env.NEXT_DEPLOYMENT_ID": "undefined",
   },
+  // Next.js honours `__esModule` on CommonJS default imports (next/image
+  // relies on it); Vite 8 no longer does unless this is set.
+  legacy: {
+    inconsistentCjsInterop: true,
+  },
   test: {
     dir: "./tests/vitest",
     browser: {
-      provider: "playwright",
+      provider: playwright(),
       enabled: true,
       headless: true,
       instances: [{ browser: "chromium" }],

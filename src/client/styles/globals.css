@@ -7,7 +7,11 @@
 
 @plugin "tailwindcss-animate";
 
-@plugin "daisyui";
+/* `join` (unused) emits `@scope` rules that Turbopack's CSS parser rejects
+   in dev since daisyUI 5.6. */
+@plugin "daisyui" {
+  exclude: join;
+}
 
 @theme {
   --animate-fade-in: fadeIn 0.25s ease-in;

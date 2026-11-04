@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useTimer } from "../db";
 import { syncWithServer } from "../hooks/sync";
 import { handleError } from "~/lib/error";
@@ -13,14 +13,14 @@ export function VisualTimer({
   progress: number;
 }) {
   const timer = useTimer();
-  const [lastStatus, setLastStatus] = useState(status);
+  const lastStatus = useRef(status);
 
   useEffect(() => {
-    if (status !== lastStatus && timer !== null) {
-      setLastStatus(status);
+    if (status !== lastStatus.current && timer !== null) {
+      lastStatus.current = status;
       syncWithServer(timer).catch(handleError);
     }
-  }, [status, setLastStatus, lastStatus, timer]);
+  }, [status, timer]);
 
   let radialColor: string;
   switch (status) {
