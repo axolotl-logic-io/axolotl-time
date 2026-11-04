@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import useInterval from "use-interval";
-import { naturalToStr, padTime, splitTimeMs } from "~/lib/time";
 import { VisualTimer } from "~/client/components/visual-timer";
-import { Link } from "./ui/link";
-import { putTimer, useTimer } from "../db";
 import { handleError } from "~/lib/error";
+import { naturalToStr, padTime, splitTimeMs } from "~/lib/time";
+import { putTimer, useTimer } from "../db";
 import { syncWithServer } from "../hooks/sync";
+import { Link } from "./ui/link";
 
 interface TimerPageProps {
   workLength: number;
@@ -49,8 +49,7 @@ export function TimerPage({
 
   return (
     <main
-      role="main"
-      className={`animate-fade-in-slow fixed top-0 left-0 z-10 flex size-full h-screen max-h-dvh flex-col items-center justify-center gap-8 bg-zinc-950 p-8`}
+      className={`fixed top-0 left-0 z-10 flex size-full h-screen max-h-dvh animate-fade-in-slow flex-col items-center justify-center gap-8 bg-zinc-950 p-8`}
     >
       <VisualTimer status={status} progress={progress} />
       <div className="flex flex-col flex-wrap items-center justify-between gap-2">

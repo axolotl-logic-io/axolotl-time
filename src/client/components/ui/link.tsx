@@ -1,7 +1,6 @@
-import { type ReactNode } from "react";
+import type { ReactNode } from "react";
+import type { Route } from "~/client/db";
 import { routeToUrl } from "~/client/nav";
-
-import { type Route } from "~/client/db";
 
 export function Link({
   route,

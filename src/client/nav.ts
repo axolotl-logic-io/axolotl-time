@@ -1,13 +1,13 @@
 "use client";
 
-import { type Route } from "~/client/db";
+import type { Route } from "~/client/db";
 import { naturalToStr } from "~/lib/time";
 
 export function routeToUrl(route: Route): string {
   switch (route.page) {
     case "home":
       return "/";
-    case "timer":
+    case "timer": {
       const { workLength, breakLength, startTime } = route;
 
       let path = "/timer";
@@ -16,5 +16,6 @@ export function routeToUrl(route: Route): string {
       path += `&startTime=${naturalToStr(startTime)}`;
 
       return path;
+    }
   }
 }

@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { handleError } from "~/lib/error";
 import { useTimer } from "../db";
 import { syncWithServer } from "../hooks/sync";
-import { handleError } from "~/lib/error";
 
 export function VisualTimer({
   status,
@@ -33,7 +33,7 @@ export function VisualTimer({
   }
 
   return (
-    <div
+    <figure
       className={`radial-progress text-5xl ${radialColor}`}
       style={
         {
@@ -42,9 +42,8 @@ export function VisualTimer({
           "--thickness": "35px",
         } as React.CSSProperties
       }
-      role="figure"
     >
       {status}
-    </div>
+    </figure>
   );
 }

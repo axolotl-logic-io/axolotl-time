@@ -1,8 +1,7 @@
-import { db } from "~/client/db";
-
-import failOnConsole from "vitest-fail-on-console";
-import { afterEach, beforeEach, vi } from "vitest";
 import { cleanup } from "@testing-library/react";
+import { afterEach, beforeEach, vi } from "vitest";
+import failOnConsole from "vitest-fail-on-console";
+import { db } from "~/client/db";
 
 // Server actions run on the server and pull in the Node-only `postgres`
 // driver, which cannot load in the browser test environment.

@@ -1,9 +1,9 @@
 "use server";
 
-import { db } from "~/server/db";
-import { announces } from "../db/schema";
 import { and, count, eq, gt, sql } from "drizzle-orm";
 import { z } from "zod";
+import { db } from "~/server/db";
+import { announces } from "../db/schema";
 
 export async function ping(
   unsafeId: string,
@@ -14,7 +14,7 @@ export async function ping(
   const sessionCutoff = new Date(Date.now() - 1000 * 60 * 60);
   const { data: id, error } = z.uuid().safeParse(unsafeId);
   if (error) {
-    throw Error("Unexpected usage of API: " + error.message);
+    throw Error(`Unexpected usage of API: ${error.message}`);
   }
 
   const now = new Date();

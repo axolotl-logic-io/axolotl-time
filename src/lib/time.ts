@@ -62,15 +62,13 @@ export function timeInWords(timeMs: number) {
     Object.entries(timeComps)
       .filter((kv) => kv[0] !== "ms")
       .filter((kv) => kv[1] > 0)
-      .map(
-        ([key, value]) => `${naturalToStr(value as number)} ${key}`,
-      )
+      .map(([key, value]) => `${naturalToStr(value as number)} ${key}`)
       .join(", ") || "0 seconds"
   );
 }
 
 export function naturalToStr(n: number): string {
-  assert(!isNaN(n), "naturalToString expected positive number, got NaN");
+  assert(!Number.isNaN(n), "naturalToString expected positive number, got NaN");
   assert(n >= 0, "naturalToString expected positive number, got negative");
 
   return n.toString();

@@ -19,10 +19,7 @@ import {
 export const createTable = pgTableCreator((name) => `perpetual-sprint_${name}`);
 
 export const announces = createTable("announaces", {
-  id: uuid("id")
-    .default(sql`uuid_generate_v7()`)
-    .primaryKey()
-    .defaultRandom(),
+  id: uuid("id").default(sql`uuid_generate_v7()`).primaryKey().defaultRandom(),
   createdAt: timestamp("created_at", { withTimezone: true })
     .default(sql`CURRENT_TIMESTAMP`)
     .notNull(),
