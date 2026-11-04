@@ -68,7 +68,7 @@ export function timeInWords(timeMs: number) {
 }
 
 export function naturalToStr(n: number): string {
-  assert(!isNaN(n), "naturalToString expected positive number, got NaN");
+  assert(!Number.isNaN(n), "naturalToString expected positive number, got NaN");
   assert(n >= 0, "naturalToString expected positive number, got negative");
 
   return n.toString();

@@ -49,7 +49,6 @@ export function TimerPage({
 
   return (
     <main
-      role="main"
       className={`fixed top-0 left-0 z-10 flex size-full h-screen max-h-dvh animate-fade-in-slow flex-col items-center justify-center gap-8 bg-zinc-950 p-8`}
     >
       <VisualTimer status={status} progress={progress} />

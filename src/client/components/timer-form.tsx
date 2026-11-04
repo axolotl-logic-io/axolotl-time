@@ -51,7 +51,7 @@ export function TimerForm() {
     <form
       method="GET"
       action="/timer"
-      role="form"
+      aria-label="Timer settings"
       className="flex flex-col gap-4"
     >
       <div className="flex flex-wrap gap-2">

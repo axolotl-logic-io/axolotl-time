@@ -14,7 +14,7 @@ export async function ping(
   const sessionCutoff = new Date(Date.now() - 1000 * 60 * 60);
   const { data: id, error } = z.uuid().safeParse(unsafeId);
   if (error) {
-    throw Error("Unexpected usage of API: " + error.message);
+    throw Error(`Unexpected usage of API: ${error.message}`);
   }
 
   const now = new Date();

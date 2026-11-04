@@ -4,7 +4,7 @@ import { TimerForm } from "./timer-form";
 
 export function HomePage() {
   return (
-    <main role="main" className="prose flex flex-col p-8">
+    <main className="prose flex flex-col p-8">
       <h1 className="text-neutral-200">Get ready to work!</h1>
       <div className="flex items-center">
         <div>
