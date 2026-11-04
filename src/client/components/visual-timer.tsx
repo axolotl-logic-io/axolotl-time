@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { handleError } from "~/lib/error";
 import { useTimer } from "../db";
 import { syncWithServer } from "../hooks/sync";
-import { handleError } from "~/lib/error";
 
 export function VisualTimer({
   status,

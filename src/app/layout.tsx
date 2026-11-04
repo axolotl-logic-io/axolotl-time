@@ -1,10 +1,10 @@
 import "~/client/styles/globals.css";
 
-import { type Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
-import { AppDescription, AppName } from "./manifest";
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import { LoadingPage } from "~/client/components/loading-page";
+import { AppDescription, AppName } from "./manifest";
 
 export const metadata: Metadata = {
   title: AppName,
@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div
-          className={`dark text-white flex min-h-dvh flex-col items-center justify-center bg-zinc-950`}
+          className={`dark flex min-h-dvh flex-col items-center justify-center bg-zinc-950 text-white`}
         >
           <Suspense fallback={<LoadingPage />}>{children}</Suspense>
         </div>

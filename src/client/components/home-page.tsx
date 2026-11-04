@@ -1,8 +1,6 @@
 import Image from "next/image";
-
-import { TimerForm } from "./timer-form";
-
 import { LuExternalLink } from "react-icons/lu";
+import { TimerForm } from "./timer-form";
 
 export function HomePage() {
   return (
@@ -11,7 +9,7 @@ export function HomePage() {
       <div className="flex items-center">
         <div>
           <Image
-            className="animate-fancy-in hidden sm:block"
+            className="hidden animate-fancy-in sm:block"
             alt="adorable axolotl"
             src="/mascot-medium.png"
             width={600}
@@ -38,6 +36,7 @@ export function HomePage() {
           href={"https://github.com/sponsors/axolotl-logic"}
           className="flex text-blue-400 underline hover:cursor-pointer hover:text-purple-400"
           target="_blank"
+          rel="noopener"
         >
           Donate
           <LuExternalLink className="size-3" />

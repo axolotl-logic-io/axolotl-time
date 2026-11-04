@@ -2,10 +2,9 @@
 
 // react-hook-form
 import { useForm } from "react-hook-form";
-
+import { useTimer } from "~/client/db";
 // Ours - Utils
 import { timeInWords } from "~/lib/time";
-import { useTimer } from "~/client/db";
 import { Button } from "./ui/button";
 
 const TIME_PRESETS = [
