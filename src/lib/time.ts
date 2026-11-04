@@ -62,9 +62,7 @@ export function timeInWords(timeMs: number) {
     Object.entries(timeComps)
       .filter((kv) => kv[0] !== "ms")
       .filter((kv) => kv[1] > 0)
-      .map(
-        ([key, value]) => `${naturalToStr(value as number)} ${key}`,
-      )
+      .map(([key, value]) => `${naturalToStr(value as number)} ${key}`)
       .join(", ") || "0 seconds"
   );
 }
